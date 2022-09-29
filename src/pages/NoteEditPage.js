@@ -10,6 +10,11 @@ function NoteEditPage() {
 
   const noteList = useContext(NoteStateContext);
 
+  useEffect(() => {
+    const siteTitle = document.getElementsByTagName("title")[0];
+    siteTitle.innerHTML = `${id}번 기록 수정 | Dream Note`;
+  });
+
   //Edit가 mount가 될 때 실행
   useEffect(() => {
     if (noteList.length !== 0) {

@@ -13,6 +13,11 @@ function NoteDetailPage() {
   const [data, setData] = useState();
 
   useEffect(() => {
+    const siteTitle = document.getElementsByTagName("title")[0];
+    siteTitle.innerHTML = `${id}번 기록 | Dream Note`;
+  });
+
+  useEffect(() => {
     if (noteList.length >= 1) {
       const clickedNote = noteList.find(
         (note) => parseInt(note.id) === parseInt(id)
