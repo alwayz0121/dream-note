@@ -46,8 +46,6 @@ function App() {
   //노트 data 관리 state
   const [noteData, noteDispatch] = useReducer(noteReducer, []);
 
-  const dataId = useRef(0); //id 값
-
   //LoadingPage.js
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -70,6 +68,7 @@ function App() {
     }
   }, []);
 
+  const dataId = useRef(0); //id 값
   //CREATE
   const onCreate = (date, goal, content) => {
     noteDispatch({

@@ -33,12 +33,12 @@ const NoteItem = ({ id, goal, content, date }) => {
     navigate(`/edit/${id}`);
   };
 
-  const { onRemove } = useContext(NoteDispatchContext);
+  const { onRemove, onCreate } = useContext(NoteDispatchContext);
   const handleRemove = () => {
     if (window.confirm("기록을 삭제하시겠어요? :(")) {
       onRemove(id);
-      navigate("/", { replace: true });
     }
+    onCreate();
   };
 
   return (

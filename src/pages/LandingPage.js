@@ -14,6 +14,11 @@ function LandingPage() {
     currentDate.getMonth() + 1
   }월 기록`;
 
+  useEffect(() => {
+    const siteTitle = document.getElementsByTagName("title")[0];
+    siteTitle.innerHTML = `Dream Note`;
+  });
+
   //날짜가 이동되면 현재 달에 해당되는 기록만 보여주기
   useEffect(() => {
     if (noteList.length >= 1) {
